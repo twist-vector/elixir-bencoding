@@ -64,7 +64,7 @@ rest of the bytes is simple:
 ```elixir
 {value,_} = Bencoding.decode("i123ei123ei123e")
 ```
-will result in `value=123`
+will result in `value=123`.
 
 
 ## Caveats and TODO
