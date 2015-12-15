@@ -98,7 +98,7 @@ defmodule Bencoding do
 
     defp decode_str(<<?:, tail :: binary>>, acc) do
       int = String.to_integer( String.reverse(to_string(acc)) )
-      {String.slice(tail, 0..int-1),
+      {binary_part(tail, 0, int),
        binary_part(tail, int, byte_size(tail)-int)}
     end
     defp decode_str(<< h, tail :: binary>>, acc), do: decode_str(tail, [h|acc])
